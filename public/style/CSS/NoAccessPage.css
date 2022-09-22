@@ -1,0 +1,38 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+body{
+    background: url("../Icons/background.png");
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+#ErrorMessage{
+    background: #fff;
+    border: none;
+    border-radius: 15px;
+    padding: 10px;
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 20px;
+    box-shadow: 2px 2px 10px 0px black;
+}
+#ErrorMessage *{
+    margin: 5px;
+}
+#ErrorMessage p{
+    font-size: 20px;
+    color: #454545;
+    font-weight: bold;
+    font-family: 'Arial';
+}
