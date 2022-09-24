@@ -36,3 +36,25 @@ body{
     font-weight: bold;
     font-family: 'Arial';
 }
+#returnHome{
+    margin-top: 15px;
+    padding: 7px;
+    outline: none;
+    border: 1px solid rgb(154, 0, 0);
+    border-radius: 7px;
+    font-size: 15px;
+    font-family: 'Arial';
+    color: rgb(154, 0, 0);
+    background: transparent;
+    transition: all 0.4s ease;
+}
+#returnHome:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: transform 0.4s ease;
+}
+#returnHome:active{
+    cursor: pointer;
+    transform: scale(0.9);
+    transition: transform 0.4s ease;
+}
