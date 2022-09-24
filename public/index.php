@@ -15,6 +15,9 @@ $rooter->map("GET", "/connect", function() {
 $rooter->map("POST", "/connect", function() {
     require "connect.php";
 }, "connectReq");
+$rooter->map("GET", "/[*:u]/[i:id]", function($u, $id) {
+    require "workSpace.php";
+});
 
 // Application des routes
 $matches = $rooter->match();

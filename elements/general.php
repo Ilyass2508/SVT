@@ -47,8 +47,12 @@ function load($arg = "") {
     <script>
         window.onload = () => {
             setTimeout(() => {
-                document.getElementById("loadPage").remove();
-                document.getElementById("sLoadPage").remove();
+                document.getElementById("loadPage").style.opacity = "0";
+                document.getElementById("loadPage").style.transition = "all 0.4s ease";
+                setTimeout(() => {
+                    document.getElementById("loadPage").remove();
+                    document.getElementById("sLoadPage").remove();
+                }, 400);
             }, 1000);
         }
     </script>

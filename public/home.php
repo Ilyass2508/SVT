@@ -1,3 +1,7 @@
+<?php
+session_start();
+require "../elements/general.php";
+?>
 <!DOCTYPE html>
 <html lang="fr-FR">
 <head>
@@ -9,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="style/CSS/home.css">
 </head>
 <body>
+    <?= load("script") ?>
     <div id="connectSpace">
         <form action="connect" method="POST">
             <div class="input">
