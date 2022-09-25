@@ -1,6 +1,9 @@
 <?php
 session_start();
 require "../elements/general.php";
+if (isset($_COOKIE["_uci"], $_COOKIE["_ip"], $_SESSION["_uci"], $_SESSION["_ip"]) AND !mempty($_COOKIE["_uci"], $_COOKIE["_ip"], $_SESSION["_uci"], $_SESSION["_ip"])) {
+    header("Location:/" . str_replace(".", "-", explode("~", explode("&", $_COOKIE["_uci"])[6])[1]) . "/" . str_replace(".", "-", explode("~", explode("&", $_COOKIE["_uci"])[0])[1]));
+}
 ?>
 <!DOCTYPE html>
 <html lang="fr-FR">
