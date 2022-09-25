@@ -42,8 +42,9 @@ if (isset($_POST["https_CONNECTSubmit"]) && isset($_POST["https_CONNECTId"]) && 
         if (count($req->fetchAll()) > 0) {
             echo load();
             $req->execute();
+            $info = $req->fetch();
             $_uci = "";
-            foreach ($req->fetch() as $key => $value) {
+            foreach ($info as $key => $value) {
                 if ($_uci === "") {
                     $_uci = $key . "~" . $value;
                 } else {
@@ -53,7 +54,7 @@ if (isset($_POST["https_CONNECTSubmit"]) && isset($_POST["https_CONNECTId"]) && 
             setcookie("_uci", $_uci, time() + 60*24*365, "/");
             setcookie("_ip", getIp(), time() + 60*24*365, "/");
             sleep(1);
-            header("Location:/" . str_replace(".", "/", $req->execute()->fetch()["identif"]) . "/" . $req->execute()->fetch()["id"]);
+            header("Location:/" . str_replace(".", "-", $info["identif"]) . "/" . $info["id"]);
         } else {
             echo $errorHtml("Identifiant ou mot de passe incorrect !");
         }
