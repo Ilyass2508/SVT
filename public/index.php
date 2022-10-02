@@ -21,6 +21,16 @@ $rooter->map("GET", "/[*:u]/[i:id]", function($u, $id) {
 $rooter->map("GET", "/error[i:error]/", function($error) {
     require "error.php";
 });
+$rooter->map("GET", "/logout/", function() {
+require "../elements/general.php";
+session_start();
+    echo load();
+    foreach ($_COOKIE as $k => $v) {
+        setcookie($k, "", time(), "/");
+    }
+    session_destroy();
+    header("Location:/");
+}, "logout");
 
 // Application des routes
 $matches = $rooter->match();

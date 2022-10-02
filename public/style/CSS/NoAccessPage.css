@@ -48,11 +48,6 @@ body{
     background: transparent;
     transition: all 0.4s ease;
 }
-#returnHome:hover{
-    cursor: pointer;
-    transform: scale(1.1);
-    transition: transform 0.4s ease;
-}
 #returnHome:active{
     cursor: pointer;
     transform: scale(0.9);

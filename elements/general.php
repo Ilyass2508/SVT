@@ -9,6 +9,7 @@ function mempty() {
     endforeach;
     return true;
 }
+$bdd = new PDO('sqlite:bdd.db');
 function getIp() {
     if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
         $ip = $_SERVER['HTTP_CLIENT_IP'];
@@ -42,9 +43,9 @@ function load($arg = "") {
 }
     </style>
     <div id="loadPage">
-        <img src="style/Icons/load.gif" id="load">
+        <img src="/style/Icons/load.gif" id="load">
     </div>
-    <script>
+    <script id="script">
         window.onload = () => {
             setTimeout(() => {
                 document.getElementById("loadPage").style.opacity = "0";
@@ -52,6 +53,7 @@ function load($arg = "") {
                 setTimeout(() => {
                     document.getElementById("loadPage").remove();
                     document.getElementById("sLoadPage").remove();
+                    document.getElementById("script").remove();
                 }, 400);
             }, 1000);
         }
@@ -79,7 +81,7 @@ L;
 }
     </style>
     <div id="loadPage">
-        <img src="style/Icons/load.gif" id="load">
+        <img src="/style/Icons/load.gif" id="load">
     </div>
 L;
     }

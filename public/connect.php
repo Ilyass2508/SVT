@@ -9,7 +9,6 @@ require "../elements/general.php";
 if (isset($_POST["https_CONNECTSubmit"]) && isset($_POST["https_CONNECTId"]) && isset($_POST["https_CONNECTMdp"])) {
     $id = htmlspecialchars($_POST["https_CONNECTId"]);
     $mdp = sha1(htmlspecialchars($_POST["https_CONNECTMdp"]));
-    $bdd = new PDO('sqlite:bdd.db');
     if (!mempty($id, $mdp)) {
         $req = $bdd->prepare("SELECT * FROM members WHERE identif = '".$id."' AND mdp = '".$mdp."'");
         $req->execute();
