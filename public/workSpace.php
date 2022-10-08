@@ -25,13 +25,17 @@ if (isset($_COOKIE["_uci"], $_COOKIE["_ip"], $_SESSION["_uci"], $_SESSION["_ip"]
     <?= load("script") ?>
     <div id="top_bar">
         <img src="style/Icons/logo.png" height="100px" id="logo">
+        <button id="addFile">+</button>
         <button id="logout" onclick="window.location.href = 'logout/';">Déconnexion</button>
     </div>
     <div id="filesTitle">
         <p class="titleSub">Nom</p>
+        <p class="titleSub">Type de fichier</p>
         <p class="titleSub">Date d'importation</p>
-        <p class="titleSub">Dernière modification</p>
         <p class="titleSub">Action</p>
+    </div>
+    <div id="files">
+        <p id="NoFile">Aucun fichier !</p>
     </div>
 </body>
 </html>
